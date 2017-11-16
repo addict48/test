@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="us">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Example Page</title>
+	<link href="jquery-ui.css" rel="stylesheet">
+	<style>
+	body{
+		font-family: "Trebuchet MS", sans-serif;
+		margin: 50px;
+	}
+	
+	select {
+		width: 200px;
+	}
+	</style>
+</head>
+<body>
+
+<!-- Slider -->
+<h2 class="demoHeaders">Slider Хуяйдер</h2>
+<input type="text" id="amount" readonly style="border:0; color:#000; font-weight:bold;">
+<div id="slider"></div>
+
+
+<script src="external/jquery/jquery.js"></script>
+<script src="jquery-ui.js"></script>
+<script>
+
+
+
+$( "#slider" ).slider({
+	range: true,
+	values: [ 17, 67 ]
+});
+
+  $( function() {
+    $( "#slider" ).slider({
+      range: true,
+      min: 0,
+      max: 8000,
+      values: [ 500, 7500 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( ui.values[ 0 ] + " руб " + " - " + ui.values[ 1 ] + " руб " );
+      }
+    });
+    $( "#amount" ).val($( "#slider" ).slider( "values", 0 ) + (" руб "
+     ) + " - " + $( "#slider" ).slider( "values", 1 ) + (" руб "
+     ) );
+  } );
+
+</script>
+</body>
+</html>

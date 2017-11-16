@@ -1,0 +1,7 @@
+*.7z
+gulpfile.js
+node_modules/
+*.txt
+build_world_catalog.psd
+src/
+*.json
